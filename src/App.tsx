@@ -5,16 +5,16 @@ import QuestionCard from './components/QuestionCard';
 // Types
 import { Difficulty, QuesionState } from './components/API';
 
-const App = () => {
+export type AnswerObject = {
+  question: string;
+  answer: string;
+  correct: boolean;
+  correctAnswer: string;
+};
 
-  type AnswerObject = {
-    question: string;
-    answer: string;
-    correct: boolean;
-    correctAnswer: string;
-  };
-  
-  const TOTAL_QUESTIONS = 10;
+const TOTAL_QUESTIONS = 10;
+
+const App = () => {
 
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuesionState[]>([]);
