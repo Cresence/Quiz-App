@@ -62,8 +62,14 @@ const App = () => {
   };
 
   const nextQuestion = () => {
+    // Move onto next question if not last question.
+    const nextSelection = number + 1;
 
-
+    if (nextSelection === TOTAL_QUESTIONS) {
+      setGameOver(true);
+    } else {
+      setNumber(nextSelection);
+    }
   }
 
   return (
